@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tower {
+  display: flex; 
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 28%;
+  height: 100%;
+}
+
+.stick {
+  height: 190px;
+  width: 25px;
+  background-color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.diskOne {
+  background-color: red;
+  height: 15px;
+  width: 105px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: -1px;
+}
+
+.diskTwo {
+  background-color: red;
+  height: 15px;
+  width: 90px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: -1px;
+}
+
+.diskThree {
+  background-color: red;
+  height: 15px;
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: -1px;
+}
+
+.diskFour {
+  background-color: red;
+  height: 15px;
+  width: 60px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: -1px;
+}
+
+.diskFive {
+  background-color: red;
+  height: 15px;
+  width: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: -1px;
+}
+
