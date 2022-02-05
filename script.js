@@ -6,7 +6,12 @@ let hard = document.getElementById("hard")
 let resetButton = document.getElementById("reset")
 let section = document.getElementById("section")
 let stick = document.getElementsByClassName("stick")
+let semaforo = document.getElementById("semaforo")
+let button = document.querySelectorAll("button")
+let contador = document.getElementsByClassName("contador")
 let lastChild = ""
+
+
 
 let counter = 0
 
@@ -127,7 +132,10 @@ function moveDisk(e) {
     }
   }
   else{                      //  
-    if(e.childElementCount === 0 || e.lastElementChild.clientWidth > lastChild.clientWidth){
+    if(lastChild === e.lastElementChild){
+      lastChild = ""
+    }
+    else if(e.childElementCount === 0 || e.lastElementChild.clientWidth > lastChild.clientWidth){
       //console.log(e.lastElementChild.clientWidth)
       e.appendChild(lastChild)
       lastChild = ""
@@ -151,12 +159,22 @@ function reset() {
   lastChild = ""
 }
 
-/*function validDisk(e) {
-  if(e.childElementCount === 0 || e.lastElementChild.clientWidth === true ){
-    console.log("Lucasss")
-    moveDisk(e)
+function semaforoTrocaCor() {
+  if(lastChild !== ""){
+    semaforo.style.backgroundColor = "black"
+    button.forEach( (e) => {
+      e.style.color = "white"
+    })
+    contador[0].style.color = "white"
   }
-}*/
+  else{
+    semaforo.style.backgroundColor = "white"
+    button.forEach( (e) => {
+      e.removeAttribute("style")
+    })
+    contador[0].removeAttribute("style")
+  }
+}
 
 easy.addEventListener("click", easyDifi)
 
@@ -171,5 +189,6 @@ for(let i = 0; i < stick.length; i++){
     
     //validDisk(stick[i])
     moveDisk(stick[i])
+    semaforoTrocaCor()
   })
 }
