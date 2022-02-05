@@ -176,6 +176,10 @@ function semaforoTrocaCor() {
   }
 }
 
+/*function win() {
+  if(stick[2])
+}*/
+
 easy.addEventListener("click", easyDifi)
 
 medium.addEventListener("click", mediumDifi)
@@ -185,7 +189,7 @@ hard.addEventListener("click", hardDifi)
 resetButton.addEventListener("click", reset)
  
 for(let i = 0; i < stick.length; i++){
-  stick[i].addEventListener("click", () =>{
+  stick[i].addEventListener("dblclick", () =>{
     
     //validDisk(stick[i])
     moveDisk(stick[i])
