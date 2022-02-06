@@ -9,6 +9,7 @@ let stick = document.getElementsByClassName("stick")
 let semaforo = document.getElementById("semaforo")
 let button = document.querySelectorAll("button")
 let contador = document.getElementsByClassName("contador")
+let winCondition = 0
 let lastChild = ""
 
 
@@ -49,6 +50,7 @@ function easyDifi() {
     
 
     on = true
+    winCondition = 3
   } 
 }
 
@@ -84,6 +86,7 @@ function mediumDifi() {
     
 
     on = true
+    winCondition = 4
   } 
 }
 
@@ -121,6 +124,7 @@ function hardDifi() {
     
 
     on = true
+    winCondition = 5
   } 
 }
 
@@ -143,6 +147,14 @@ function moveDisk(e) {
       let count = document.getElementById("count").innerText = counter
       //console.log("colocando o disco")
     }
+  }
+}
+
+function win() {
+  if(stick[2].childElementCount === winCondition){
+    //console.log("venceu porra")
+    alert("VICTORY")
+    setTimeout(reset(), 5000)
   }
 }
 
@@ -189,10 +201,11 @@ hard.addEventListener("click", hardDifi)
 resetButton.addEventListener("click", reset)
  
 for(let i = 0; i < stick.length; i++){
-  stick[i].addEventListener("dblclick", () =>{
+  stick[i].addEventListener("click", () =>{
     
     //validDisk(stick[i])
     moveDisk(stick[i])
     semaforoTrocaCor()
+    win()
   })
 }

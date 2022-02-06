@@ -154,6 +154,8 @@ button:hover{
   transition: 0.25s;
 }
 
+
+
 @media only screen and (max-width: 525px) {
   .chooseContainer {
     width: 242px;
